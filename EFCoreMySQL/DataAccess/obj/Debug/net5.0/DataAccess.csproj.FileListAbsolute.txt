@@ -1,0 +1,24 @@
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\bin\Debug\net5.0\DataAccess.dll
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.dll
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+C:\Users\OS\source\repos\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.pdb
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\bin\Debug\net5.0\DataAccess.deps.json
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\bin\Debug\net5.0\DataAccess.dll
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\bin\Debug\net5.0\ref\DataAccess.dll
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\bin\Debug\net5.0\DataAccess.pdb
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.csprojAssemblyReference.cache
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfoInputs.cache
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.AssemblyInfo.cs
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.dll
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\ref\DataAccess.dll
+C:\Users\OS\source\repos\demotuan 3\EFCoreMySQL\DataAccess\obj\Debug\net5.0\DataAccess.pdb
