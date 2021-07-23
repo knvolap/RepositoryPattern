@@ -1,5 +1,9 @@
-﻿using EFCoreMySQL.DBContexts;
+﻿using AutoMapper;
+using connectMySQL.Interface;
+using EFCoreMySQL.DBContexts;
 using EFCoreMySQL.Model;
+using EFCoreMySQL.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,29 +17,87 @@ namespace EFCoreMySQL.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IIdentityService identityService;
+        private readonly UserRepository userRepository;
+        private readonly IMapper _mapper;
         private MyDBContext myDbContext;
 
-        public UserController(MyDBContext context)
+        public UserController(IIdentityService identityService, IMapper mapper)
         {
-            myDbContext = context;
+            this.identityService = identityService;
+            _mapper = mapper;
         }
-
-        [HttpGet]
-        public IList<User> Get()
-        {
-            return (this.myDbContext.Users.ToList());
-        }
+   
+        //// GET: api/<UserController>
+        //[Authorize(Roles = "Admin")]
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<User>>> List()
+        //{
+        //    var user1 = await userRepository.ListAsync();
+        //    IEnumerable<User> users = new List<User>();
+        //    _mapper.Map(user1, users);
+        //    return Ok(users);
+        //}
 
         [HttpPost]
-        public string Post(User obj)
+        [Route("login")]
+        public ActionResult Login([FromBody] LoginModels loginModel)
         {
-            return obj.Id + obj.Account + obj.Password + obj.CreationDateTime;
+            ResponseToken authenResponse = identityService.Authentication(loginModel);
+
+            return Ok(authenResponse);
+
         }
-        [HttpDelete]
-        public string Delete(User data)
+        // GET: api/<UserController>
+        [Authorize(Roles = "Admin")]
+        [HttpGet]
+        public ActionResult<List<User>> Get()
         {
-            return data.Id + data.Account + data.Password + data.CreationDateTime;
+            var users = userRepository.ListAsync();
+
+            return Ok(users);
         }
+
+        // GET api/<UserController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        //public UserController(MyDBContext _context, IMapper mapper)
+        //{
+        //    _mapper = mapper;
+        //    userRepository = new UserRepository(_context);
+        //}
+
+        //[HttpGet]
+        //public IList<User> Get()
+        //{
+        //    return (this.myDbContext.Users.ToList());
+        //}
+
+        //[HttpPost]
+        //public string Post(User obj)
+        //{
+        //    return obj.Id + obj.Account + obj.Password + obj.CreationDateTime;
+        //}
+        //[HttpDelete]
+        //public string Delete(User data)
+        //{
+        //    return data.Id + data.Account + data.Password + data.CreationDateTime;
+        //}
 
 
         ////http://localhost/api/users/paging?pageIndex=1&pageSize=10&keyword=

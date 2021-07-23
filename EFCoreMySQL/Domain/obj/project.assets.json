@@ -1894,11 +1894,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OS\\source\\repos\\demotuan 3\\EFCoreMySQL\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\OS\\source\\repos\\demotuan 3\\RepositoryPattern\\EFCoreMySQL\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\EFCoreMySQL\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\RepositoryPattern\\EFCoreMySQL\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\OS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\EFCoreMySQL\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\RepositoryPattern\\EFCoreMySQL\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

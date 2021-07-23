@@ -18,6 +18,7 @@ namespace EFCoreMySQL.DBContexts
         public DbSet<Order> Orders { get; set; }
 
 
+
         public MyDBContext(DbContextOptions<MyDBContext> options) : base(options)
         {
         }
@@ -34,6 +35,8 @@ namespace EFCoreMySQL.DBContexts
             modelBuilder.Entity<Product>().ToTable("Products");
             modelBuilder.Entity<Order>().ToTable("Orders");
 
+
+
             // Configure Primary Keys  
             modelBuilder.Entity<UserGroup>().HasKey(ug => ug.Id).HasName("PK_UserGroups");
             modelBuilder.Entity<User>().HasKey(u => u.Id).HasName("PK_Users");
@@ -41,6 +44,9 @@ namespace EFCoreMySQL.DBContexts
             modelBuilder.Entity<Category>().HasKey(c => c.IDCategory).HasName("PK_Categorys");
             modelBuilder.Entity<Product>().HasKey(p => p.IDProduct).HasName("PK_Products");
             modelBuilder.Entity<Order>().HasKey(o => o.IDOder).HasName("PK_Order");
+
+
+
 
             // Configure indexes  
             modelBuilder.Entity<UserGroup>().HasIndex(p2 => p2.Name).IsUnique().HasDatabaseName("Idx_Name");
@@ -99,6 +105,7 @@ namespace EFCoreMySQL.DBContexts
             modelBuilder.Entity<Order>().Property(o => o.Status).HasColumnType("bit").IsRequired(); 
             modelBuilder.Entity<Order>().Property(o => o.LastUpdateDateTime).HasColumnType("datetime").IsRequired(false);
 
+       
             // Configure relationships  
             modelBuilder.Entity<User>().HasOne<UserGroup>().WithMany().HasPrincipalKey(ug => ug.Id).HasForeignKey(u => u.UserGroupId).OnDelete(DeleteBehavior.NoAction).HasConstraintName("FK_Users_UserGroups");
 

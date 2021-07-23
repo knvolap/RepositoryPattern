@@ -2,6 +2,7 @@
 using EFCoreMySQL.DBContexts;
 using EFCoreMySQL.Model;
 using EFCoreMySQL.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -49,6 +50,7 @@ namespace EFCoreMySQL.Controllers
             await userGroupRepository.UpdateAsync(userGroup);
             return Ok(userGroup.Id);
         }
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")] //xóa đúng
         public async Task<IActionResult> Delete(int id)
         {

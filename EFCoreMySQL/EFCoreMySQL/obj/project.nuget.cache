@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+riFbVCGQSxhKStG+G494bTMgsuaxzg1eEYQA7sOmoyOELaXap1UTkPzYYZhDXROha5KKGGvLDyKx3RWqF9gfQ==",
+  "dgSpecHash": "5ZSq8y26PS+OGnUvlacaNTMyY6b0KCv1n1TUZG4WZshSqdvtSSlUr2Ole/KlVI7z5066/mXistUM6Pc0wT0Wkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\EFCoreMySQL\\EFCoreMySQL\\EFCoreMySQL.csproj",
+  "projectFilePath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\RepositoryPattern\\EFCoreMySQL\\EFCoreMySQL\\EFCoreMySQL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OS\\.nuget\\packages\\antlr\\3.4.1.9004\\antlr.3.4.1.9004.nupkg.sha512",
     "C:\\Users\\OS\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

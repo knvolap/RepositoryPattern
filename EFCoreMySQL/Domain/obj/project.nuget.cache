@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZSl4OZB+O9dwHMhSO/d8d1dVt4mq7RjnlKTWPJhZvX70/8t166v3zL6K+SKXMPj7pNftX+8MXQ0sClUSRXFLNA==",
+  "dgSpecHash": "K1oszRqafRe6G2Rz1mrHbq+sgUCPDaWs5OSEfPeFFkD3habjmCgFeVuU5Ynkgr6FzClJCRIk94cvb9Smj42lcg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\EFCoreMySQL\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\OS\\source\\repos\\demotuan 3\\RepositoryPattern\\EFCoreMySQL\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OS\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\OS\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
