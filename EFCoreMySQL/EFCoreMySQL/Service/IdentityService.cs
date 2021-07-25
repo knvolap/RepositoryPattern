@@ -27,7 +27,6 @@ namespace connectMySQL.Serivce
         {
             var user1 = _context.Users.Where(a => a.Account == loginModels.username && a.Password == loginModels.password)
                 .FirstOrDefault<User>();
-
             if (user1 != null)
             {
                 var authClaims = new List<Claim>
