@@ -22,12 +22,80 @@ namespace EFCoreMySQL.Controllers
         private readonly IMapper _mapper;
         private MyDBContext myDbContext;
 
-        public UserController(IIdentityService identityService, IMapper mapper)
+        public UserController(IIdentityService identityService, IMapper mapper, MyDBContext _context)
         {
             this.identityService = identityService;
             _mapper = mapper;
+            userRepository = new UserRepository(_context);
         }
    
+
+
+        [HttpPost]
+        [Route("login")]
+        public ActionResult Login([FromBody] LoginModels loginModel)
+        {
+            ResponseToken authenResponse = identityService.Authentication(loginModel);
+
+            return Ok(authenResponse);
+        }
+
+        //// GET: api/<UserController>
+        //[Authorize(Roles = "Admin")]
+        //[HttpGet]
+        //public ActionResult<List<User>> Get()
+        //{
+        //    var users = userRepository.ListAsync();
+
+        //    return Ok(users);
+        //}
+
+        // GET: api/<UserController>
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<User>>> List2()
+        {
+            var user1 = await userRepository.ListAsync();
+            IEnumerable<User> users = new List<User>();
+            _mapper.Map(user1, users);
+            return Ok(users);
+        }
+
+        // GET api/<UserController>/5
+        [HttpGet("{id}")]
+        public string Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/<UserController>
+
+        [Authorize(Roles = "Admin")]
+        [HttpPost]
+        public async Task<IActionResult> Create(User user)
+        {
+            User user1 = new User();
+            _mapper.Map(user, user1);
+            await userRepository.AddAsync(user);
+            return Ok(user.Id);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{id}")] //xóa đúng
+        public async Task<IActionResult> Delete(int id)
+        {
+            User user1 = await userRepository.GetDetailAsync(id);
+            if (user1 == null)
+            {
+                return NotFound();
+            }
+            await userRepository.DeleteAsync(user1);
+            return Ok();
+        }
+
+
+
+
+
         //// GET: api/<UserController>
         //[Authorize(Roles = "Admin")]
         //[HttpGet]
@@ -39,53 +107,10 @@ namespace EFCoreMySQL.Controllers
         //    return Ok(users);
         //}
 
-        [HttpPost]
-        [Route("login")]
-        public ActionResult Login([FromBody] LoginModels loginModel)
-        {
-            ResponseToken authenResponse = identityService.Authentication(loginModel);
-
-            return Ok(authenResponse);
-
-        }
-        // GET: api/<UserController>
-        [Authorize(Roles = "Admin")]
-        [HttpGet]
-        public ActionResult<List<User>> Get()
-        {
-            var users = userRepository.ListAsync();
-
-            return Ok(users);
-        }
-
-        // GET api/<UserController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-
-
-
-
-
-
-
-
-
-
-
         //public UserController(MyDBContext _context, IMapper mapper)
         //{
         //    _mapper = mapper;
         //    userRepository = new UserRepository(_context);
-        //}
-
-        //[HttpGet]
-        //public IList<User> Get()
-        //{
-        //    return (this.myDbContext.Users.ToList());
         //}
 
         //[HttpPost]
@@ -115,11 +140,5 @@ namespace EFCoreMySQL.Controllers
         //    return Ok(user);
         //}
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Delete(Guid id)
-        //{
-        //    var result = await _userService.Delete(id);
-        //    return Ok(result);
-        //}
     }
 }

@@ -34,11 +34,9 @@ namespace connectMySQL.Serivce
                     new Claim(ClaimTypes.Name, user1.Account),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 };
-
                 authClaims.Add(new Claim(ClaimTypes.Role, user1.Role));
 
                 var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
-
                 var token = new JwtSecurityToken(
                     issuer: _configuration["JWT:ValidIssuer"],
                     audience: _configuration["JWT:ValidAudience"],
@@ -46,14 +44,12 @@ namespace connectMySQL.Serivce
                     claims: authClaims,
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                     );
-
                 var tokenResult = new ResponseToken
                 {
                     Message = "Login successful",
                     Token = new JwtSecurityTokenHandler().WriteToken(token),
                     Expiration = token.ValidTo
                 };
-
                 return tokenResult;
             }
             return new ResponseToken { Message = "Username or password incorrect" };

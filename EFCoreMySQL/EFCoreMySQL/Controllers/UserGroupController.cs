@@ -24,7 +24,7 @@ namespace EFCoreMySQL.Controllers
             _mapper = mapper;
             userGroupRepository = new UserGroupRepository(_context);
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserGroup>>> List()
         {
